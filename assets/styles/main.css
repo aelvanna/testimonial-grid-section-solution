@@ -8,6 +8,9 @@
   font-weight: 500;
   font-size: 0.813rem;
   box-sizing: border-box;
+}
+
+html {
   background-color: hsl(214, 17%, 92%);
 }
 
@@ -18,8 +21,55 @@
 .grid {
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: repeat(5, 1fr);
+  grid-template-rows: repeat(5, auto);
   margin: 3rem 2rem;
+  row-gap: 2.5rem;
+}
+.grid > :nth-child(1) {
+  background-color: hsl(263, 55%, 52%);
+  color: hsl(0, 0%, 100%);
+}
+.grid > :nth-child(2) {
+  background-color: hsl(217, 19%, 35%);
+  color: hsl(0, 0%, 100%);
+}
+.grid > :nth-child(2n+3) {
+  background-color: hsl(0, 0%, 100%);
+  color: hsl(217, 19%, 35%);
+}
+.grid > :nth-child(4) {
+  background-color: hsl(219, 29%, 14%);
+  color: hsl(0, 0%, 81%);
+}
+
+.testimonial {
+  font-size: 1.5rem;
+}
+
+.card {
+  padding: 2rem;
+  border-radius: 10px;
+  height: fit-content;
+  box-shadow: 0rem 2rem 5rem -5px hsl(224, 10%, 45%);
+}
+
+.author {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  column-gap: 1.25rem;
+  margin-bottom: 1rem;
+}
+
+.profile-img {
+  grid-row: 1/3;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+}
+
+.author-credential {
+  opacity: 0.5;
 }
 
 .attribution {
