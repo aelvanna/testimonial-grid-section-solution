@@ -15,7 +15,9 @@ html {
 }
 
 .container {
-  height: 100vh;
+  display: grid;
+  place-items: center;
+  min-height: 100vh;
 }
 
 .grid {
@@ -25,24 +27,34 @@ html {
   margin: 3rem 2rem;
   row-gap: 2.5rem;
 }
-.grid > :nth-child(1) {
+.grid #daniel-clifford {
   background-color: hsl(263, 55%, 52%);
   color: hsl(0, 0%, 100%);
+  position: relative;
 }
-.grid > :nth-child(2) {
+.grid #daniel-clifford > * {
+  position: relative;
+  z-index: 2;
+}
+.grid #jonathan-walters {
   background-color: hsl(217, 19%, 35%);
   color: hsl(0, 0%, 100%);
 }
-.grid > :nth-child(2n+3) {
+.grid #patrick-abrams {
+  background-color: hsl(219, 29%, 14%);
+  color: hsl(0, 0%, 81%);
+}
+.grid #patrick-abrams .author figcaption {
+  color: hsl(0, 0%, 100%);
+}
+.grid #kira-whittle,
+.grid #jeanette-harmon {
   background-color: hsl(0, 0%, 100%);
   color: hsl(217, 19%, 35%);
 }
-.grid > :nth-child(2n+3) blockquote {
+.grid #kira-whittle blockquote,
+.grid #jeanette-harmon blockquote {
   color: hsl(217, 19%, 35%);
-}
-.grid > :nth-child(4) {
-  background-color: hsl(219, 29%, 14%);
-  color: hsl(0, 0%, 81%);
 }
 
 .author-name {
@@ -62,7 +74,6 @@ html {
 .card {
   padding: 3rem;
   border-radius: 10px;
-  height: fit-content;
   box-shadow: 20px 20px 40px -15px hsla(217, 19%, 35%, 0.25);
 }
 
@@ -94,6 +105,44 @@ blockquote {
 
 .attribution a {
   color: hsl(228, 45%, 44%);
+}
+
+@media only screen and (min-width: 1024px) {
+  .grid {
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, auto);
+    gap: 2rem;
+    margin: 5rem;
+  }
+  .grid #daniel-clifford {
+    grid-column: 1/3;
+  }
+  .grid #daniel-clifford::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 10%;
+    width: 104px;
+    height: 102px;
+    background-color: hsl(264, 82%, 80%);
+    mask: url("../images/bg-pattern-quotation.svg") no-repeat;
+    z-index: 1;
+  }
+  .grid #jonathan-walters {
+    grid-column: 3/4;
+  }
+  .grid #jeanette-harmon {
+    grid-column: 1/2;
+    grid-row: 2/3;
+  }
+  .grid #patrick-abrams {
+    grid-column: 2/4;
+    grid-row: 2/3;
+  }
+  .grid #kira-whittle {
+    grid-column: 4/5;
+    grid-row: 1/3;
+  }
 }
 
 /*# sourceMappingURL=main.css.map */
