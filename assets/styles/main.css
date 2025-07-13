@@ -144,6 +144,7 @@ blockquote {
     width: 6.5rem;
     height: 6.375rem;
     background-color: hsl(264, 82%, 80%);
+    -webkit-mask: url("../images/bg-pattern-quotation.svg") no-repeat;
     mask: url("../images/bg-pattern-quotation.svg") no-repeat right top/contain;
     z-index: 1;
   }
