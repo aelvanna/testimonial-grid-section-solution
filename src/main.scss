@@ -156,7 +156,7 @@ blockquote {
   .grid {
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(2, auto);
-    max-width: 69.375rem; /* 1110px */
+    max-width: 69.375rem;
     gap: 2rem;
 
     #daniel-clifford {
@@ -166,11 +166,12 @@ blockquote {
         content: "";
         position: absolute;
         top: 0;
-        right: 10%;
-        width: 8rem;
-        height: 7.85rem;
+        right: 5rem;
+        width: 6.5rem;
+        height: 6.375rem;
         background-color: $purple-300;
-        mask: url("../images/bg-pattern-quotation.svg") no-repeat;
+        mask: url("../images/bg-pattern-quotation.svg") no-repeat right top /
+          contain;
         z-index: 1;
       }
     }
